@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:24c890f0916663f62c472fffebad7446583eb520c32d8233c79cfb304a17e820
-size 284
+package org.example.auth_module
+
+import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.runApplication
+
+@SpringBootApplication
+class AuthModuleApplication
+
+fun main(args: Array<String>) {
+    runApplication<AuthModuleApplication>(*args)
+}
