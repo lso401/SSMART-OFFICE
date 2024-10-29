@@ -1,19 +1,3 @@
-package org.example.auth_module.user.service.port
-
-import org.example.auth_module.user.controller.port.UserService
-import org.example.auth_module.user.domain.User
-import org.springframework.stereotype.Service
-
-@Service
-class UserServiceImpl(
-    val userRepository: UserRepository
-) : UserService{
-
-    override fun getUserByEmail(email: String?): User? {
-        return userRepository.findByEmail(email)
-    }
-
-    override fun addUser(user: User): User {
-        return userRepository.save(user)
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:b181dbeed3316fe9b7ae9f9143da9dfc6ebca39b7d61b5bce1df8c34377cce42
+size 670
