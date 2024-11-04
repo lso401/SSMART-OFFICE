@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7ff325c2867bd1dd40c9611b8f8576357eb04a9e1c1797b7c19e929e493d399e
-size 344
+package org.example.auth_module.user.infrastructure
+
+import org.springframework.data.jpa.repository.JpaRepository
+import org.springframework.stereotype.Repository
+
+@Repository
+interface UserJpaRepository : JpaRepository<UserEntity, Long> {
+    fun findByEmail(email: String?): UserEntity?
+    fun findByLoginId(loginId: String?): UserEntity?
+}
