@@ -1,7 +1,3 @@
-import React from "react";
-
-const Home = () => {
-  return <div>홈입니다</div>;
-};
-
-export default Home;
+version https://git-lfs.github.com/spec/v1
+oid sha256:76b76834fa69e8003ec6c869f7844c578885eead1959abf2ba4290a588fa0fe3
+size 108
