@@ -1,19 +1,3 @@
-import PropTypes from "prop-types";
-import styles from "./../../styles/SeatButton.module.css";
-
-const SeatButton = ({ color, content }) => {
-  return (
-    <div className={styles.container}>
-      <div className={styles.content} data-color={color}>
-        {content}
-      </div>
-    </div>
-  );
-};
-
-SeatButton.propTypes = {
-  color: PropTypes.string.isRequired,
-  content: PropTypes.string.isRequired,
-};
-
-export default SeatButton;
+version https://git-lfs.github.com/spec/v1
+oid sha256:c3a67386f1571eaf8050d7c7bffc5b16950af57072ae5733ba8ae27e1599b551
+size 434
