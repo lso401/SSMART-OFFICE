@@ -1,16 +1,3 @@
-import { Outlet } from "react-router-dom";
-import styles from "./../styles/Seat.module.css";
-
-const Seat = () => {
-  return (
-    <div className={styles.container}>
-      <div className={styles.header}>
-        <div className={styles.date}>시간</div>
-        <div className={styles.floor}>층수</div>
-      </div>
-      <Outlet />
-    </div>
-  );
-};
-
-export default Seat;
+version https://git-lfs.github.com/spec/v1
+oid sha256:207b4ea39335abb2393ced1587c1caa51af13dc7a6e98545c98bc27026d8371d
+size 788
