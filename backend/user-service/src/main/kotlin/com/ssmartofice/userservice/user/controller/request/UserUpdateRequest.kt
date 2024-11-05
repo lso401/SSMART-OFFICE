@@ -1,10 +1,3 @@
-package com.ssmartofice.userservice.user.controller.request
-
-data class UserUpdateRequest(
-    val email: String? = null,
-    val password: String? = null,
-    val name: String? = null,
-    val position: String? = null,
-    val duty: String? = null,
-    val profileImageUrl: String? = null
-)
+version https://git-lfs.github.com/spec/v1
+oid sha256:5fdcb1fac922aa2e26fdca24919f81b306cb425b86c18118c65ef5dc47144d64
+size 634
