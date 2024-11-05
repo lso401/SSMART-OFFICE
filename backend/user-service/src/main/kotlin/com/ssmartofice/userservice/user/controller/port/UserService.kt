@@ -1,12 +1,3 @@
-package com.ssmartofice.userservice.user.controller.port
-
-import com.ssmartofice.userservice.user.domain.User
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable
-
-interface UserService {
-    fun addUser(user: User): User
-    fun findUserByUserId(userId: Long): User
-    fun getAllUsersByPage(pageable: Pageable): Page<User>
-    fun updateUser(userId: Long, user: User): User
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:89c4f2f8b84675bd4dfef9a05c8d5a0efb2f25b990721a2f4503e6960b6c0b03
+size 629
