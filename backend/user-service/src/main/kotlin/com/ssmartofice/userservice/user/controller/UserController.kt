@@ -1,15 +1,3 @@
-package com.ssmartofice.userservice.user.controller
-
-import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
-
-@RestController
-@RequestMapping("/api/v1/users")
-class UserController {
-    @GetMapping("/ping")
-    fun check():ResponseEntity<Any>{
-        return ResponseEntity.ok("pong");
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:6eaccf674df533eca0708c6dc895b4fc8f562cadc06794e55a635f50a9633bf8
+size 828
