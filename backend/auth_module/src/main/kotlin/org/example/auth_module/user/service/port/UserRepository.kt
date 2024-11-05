@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a1d13a6c21602634448ce1a6d62b028123d150329a1cb66562362c34a8579282
-size 249
+package org.example.auth_module.user.service.port
+
+import org.example.auth_module.user.domain.User
+
+interface UserRepository {
+    fun findByEmail(email: String?): User?
+    fun findByLoginId(loginId: String): User?
+    fun save(user: User): User
+}
