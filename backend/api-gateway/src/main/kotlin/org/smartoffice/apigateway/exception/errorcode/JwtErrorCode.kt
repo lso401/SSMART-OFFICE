@@ -1,9 +1,3 @@
-package org.smartoffice.apigateway.exception.errorcode
-
-import org.springframework.http.HttpStatus
-
-enum class JwtErrorCode(override val httpStatus: HttpStatus, override val message: String) : ErrorCode {
-    NO_TOKEN_EXCEPTION(HttpStatus.UNAUTHORIZED, "해당 토큰이 존재하지 않습니다."),
-    EXPIRED_TOKEN_EXCEPTION(HttpStatus.UNAUTHORIZED, "해당 토큰이 만료되었습니다."),
-    INVALID_TOKEN(HttpStatus.UNAUTHORIZED, "사용할 수 없는 토큰입니다."),
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:18961f765c6f50f66e46e0569436520389d0a6b157c67606563e9c73fbb8cc90
+size 484
