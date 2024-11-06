@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e7f2eb4f0268d61c3785c6454398318ff183d1f60458561ad3caf66944a45513
-size 372
+package org.example.configserver
+
+import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.runApplication
+import org.springframework.cloud.config.server.EnableConfigServer
+
+@SpringBootApplication
+@EnableConfigServer
+class ConfigServerApplication
+
+fun main(args: Array<String>) {
+	runApplication<ConfigServerApplication>(*args)
+}
