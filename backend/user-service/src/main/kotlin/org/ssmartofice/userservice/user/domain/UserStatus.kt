@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d02d9e3fde428671605dacd281391075ddfca7a259eaf4a26ef83baba631c91f
-size 171
+package com.ssmartofice.userservice.user.domain
+
+enum class UserStatus {
+    ACTIVE, BREAK, OFF_DUTY, ON_DUTY //일하는 중, 휴식 중, 퇴근, 출근 (수정 가능)
+}

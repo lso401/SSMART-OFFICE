@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cef3d590de42fcc79f9c3c520c6819f0514212626dd3d7db288b9c601107b093
-size 247
+package org.example.auth_module.global.exception.errorcode
+
+import org.springframework.http.HttpStatus
+import java.io.Serializable
+
+interface ErrorCode : Serializable {
+    val httpStatus: HttpStatus
+    val message: String
+    val name: String
+}
