@@ -1,18 +1,3 @@
-import styles from "./../../styles/MyPage/MyPage.module.css";
-import Home from "./../../assets/Menu/SSMART OFFICE.svg?react";
-
-const MyInfo = () => {
-  return (
-    <div className={styles.container}>
-      <div className={styles.left}>
-        <Home className={styles.image} />
-      </div>
-      <div className={styles.right}>
-        <div>
-          <img src="" alt="" />
-        </div>
-      </div>
-    </div>
-  );
-};
-export default MyInfo;
+version https://git-lfs.github.com/spec/v1
+oid sha256:06b37be5ef75344d0b05544c7305a914b87534204eff08b9bbadbbbb2f46456f
+size 1362
