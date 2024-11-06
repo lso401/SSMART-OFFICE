@@ -1,20 +1,3 @@
-import Menu from "./components/Menu";
-import AppRoutes from "./AppRoutes.jsx";
-import Login from "./pages/Login.jsx";
-
-import styles from "./styles/App.module.css";
-import "./styles/Reset.css";
-
-const App = () => {
-  return (
-    <>
-      <div className={styles.container}>
-        {/* <Login /> */}
-        <Menu />
-        <AppRoutes />
-      </div>
-    </>
-  );
-};
-
-export default App;
+version https://git-lfs.github.com/spec/v1
+oid sha256:0030de712c7a1cf1d9248b69a5b9769b7e917f9a3b1471705f040e33f437a4ab
+size 448
