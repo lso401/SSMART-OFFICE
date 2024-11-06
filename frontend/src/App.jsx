@@ -1,20 +1,3 @@
-import Menu from "./components/Menu";
-import AppRoutes from "./AppRoutes.jsx";
-import Login from "./pages/Login.jsx";
-import "react-big-calendar/lib/css/react-big-calendar.css";
-import styles from "./styles/App.module.css";
-import "./styles/Reset.css";
-
-const App = () => {
-  return (
-    <>
-      <div className={styles.container}>
-        {/* <Login /> */}
-        <Menu />
-        <AppRoutes />
-      </div>
-    </>
-  );
-};
-
-export default App;
+version https://git-lfs.github.com/spec/v1
+oid sha256:84acafdafbc56077c5c2b8801b750883d4001475e5ff0a6ea0e83946db8e3420
+size 533
