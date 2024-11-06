@@ -1,17 +1,3 @@
-import React from "react";
-import MemberList from "../components/Message/MemberList";
-import styles from "./../styles/Message/Message.module.css";
-import AddMember from "./../assets/Message/AddMember.svg?react";
-
-const Message = () => {
-  return (
-    <div className={styles.message_container}>
-      <div className={styles.member_box}>
-        <AddMember className={styles.add_member} />
-        <MemberList />
-      </div>
-    </div>
-  );
-};
-
-export default Message;
+version https://git-lfs.github.com/spec/v1
+oid sha256:6387706f44a9c4419abe0abd90f11e8d87a9b5ada37a03957502566a2d65e9f6
+size 1707
