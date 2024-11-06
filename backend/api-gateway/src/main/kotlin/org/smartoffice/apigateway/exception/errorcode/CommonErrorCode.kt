@@ -1,8 +1,3 @@
-package org.smartoffice.apigateway.exception.errorcode
-
-import org.springframework.http.HttpStatus
-
-enum class CommonErrorCode(override val httpStatus: HttpStatus, override val message: String) : ErrorCode {
-    INTERNAL_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, "내부 서버 에러 입니다."),
-    ;
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:f5c74af8bc26ec6edb712a8391816f0ecc16878a22b5d39f4d9995535bfe2308
+size 312
