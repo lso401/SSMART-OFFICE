@@ -1,19 +1,3 @@
-import React from "react";
-import styles from "../../styles/Home/Todo.module.css";
-
-const TodoList = () => {
-  return (
-    <div>
-      <ul className={styles.todoList}>
-        <li className={styles.todoItem}>
-          <label>
-            <input type="checkbox" className={styles.checkIcon} />
-            <span className={styles.labelText}>코드 리뷰 반영 및 수정</span>
-          </label>
-        </li>
-      </ul>
-    </div>
-  );
-};
-
-export default TodoList;
+version https://git-lfs.github.com/spec/v1
+oid sha256:ffe009c0777b2ecd5fbfef66eaaefed6b4906d082a7d01e11882801ad50d603d
+size 699
