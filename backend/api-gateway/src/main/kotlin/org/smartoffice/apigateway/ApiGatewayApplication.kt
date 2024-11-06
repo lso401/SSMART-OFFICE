@@ -1,11 +1,11 @@
-package org.example.auth_module
+package org.smartoffice.apigateway
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class AuthModuleApplication
+class ApiGatewayApplication
 
 fun main(args: Array<String>) {
-    runApplication<AuthModuleApplication>(*args)
+    runApplication<ApiGatewayApplication>(*args)
 }
