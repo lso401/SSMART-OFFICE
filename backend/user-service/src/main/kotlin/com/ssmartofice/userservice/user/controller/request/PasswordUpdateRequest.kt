@@ -1,10 +1,3 @@
-package com.ssmartofice.userservice.user.controller.request
-
-import jakarta.validation.constraints.NotBlank
-
-data class PasswordUpdateRequest(
-    @field:NotBlank(message = "기존 비밀번호를 입력해주세요.")
-    val oldPassword: String,
-    @field:NotBlank(message = "새 비밀번호를 입력해주세요.")
-    val newPassword: String,
-)
+version https://git-lfs.github.com/spec/v1
+oid sha256:73a6568f27be47f0e2ad60d6a998d5dc8cc5505860312c82c6354acf6e8c57e6
+size 352
