@@ -1,11 +1,3 @@
-const Message = () => {
-  return (
-    <div>
-      <h1>Message</h1>
-      <h2>Message</h2>
-      <h3>Message</h3>
-    </div>
-  );
-};
-
-export default Message;
+version https://git-lfs.github.com/spec/v1
+oid sha256:e8c4ead520e50b68934161fad24f42219953c8125685901c7fdd23cf18ad520a
+size 1986
