@@ -1,3 +1,1 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e86a3957857bc1d6b2293d47cff3aa8990111159c8435ea2497d35d6f935554b
-size 34
+rootProject.name = 'user-service'
