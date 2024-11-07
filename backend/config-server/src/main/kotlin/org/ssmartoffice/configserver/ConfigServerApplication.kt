@@ -1,13 +1,3 @@
-package org.ssmartoffice.configserver
-
-import org.springframework.boot.autoconfigure.SpringBootApplication
-import org.springframework.boot.runApplication
-import org.springframework.cloud.config.server.EnableConfigServer
-
-@SpringBootApplication
-@EnableConfigServer
-class ConfigServerApplication
-
-fun main(args: Array<String>) {
-	runApplication<ConfigServerApplication>(*args)
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:572401c4d52cc1ebea9078d2970bd6ce1683fa08624aafcafa1a1761aaedcad7
+size 377
