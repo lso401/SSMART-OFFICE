@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d2b0b15f601b039e1396b152a6cce173437d278250fda63ee56b0c7d3189f235
-size 289
+package org.smartoffice.apigateway.exception
+
+import com.fasterxml.jackson.annotation.JsonInclude
+import org.springframework.validation.FieldError
+
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
+class ErrorResponse(
+    val status: Int = 0,
+    val error: String,
+    val message: String?,
+)
