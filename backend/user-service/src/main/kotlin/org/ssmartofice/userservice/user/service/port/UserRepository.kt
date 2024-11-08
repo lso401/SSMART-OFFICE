@@ -1,15 +1,3 @@
-package com.ssmartofice.userservice.user.service.port
-
-import com.ssmartofice.userservice.user.domain.User
-import org.springframework.data.domain.Page
-import org.springframework.data.domain.Pageable
-import org.springframework.stereotype.Repository
-
-@Repository
-interface UserRepository {
-    fun save(user: User): User
-    fun findById(id: Long): User?
-    fun findByEmail(email: String): User?
-    fun findAll(pageable: Pageable): Page<User>
-    fun findMaxEmployeeNumberByYear(s: String): String?
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:679c8102eaa7481ac44e483643732908ad5edb226c318b3bdd50579e0ef0ce20
+size 500

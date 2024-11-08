@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0240255b64fa680ebc7ee2154fbd95f013cb0b4cce69582be52e740d35266738
-size 263
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.container {
+  display: flex;
+}
+.menu {
+  width: 15rem;
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+}
+.appRoutes {
+  margin-left: 240px;
+  flex: 1;
+  min-height: 100dvh;
+}
