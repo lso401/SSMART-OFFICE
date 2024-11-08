@@ -1,12 +1,3 @@
-package org.ssmartoffice.authenticationservice.client.request
-
-import jakarta.validation.constraints.Email
-import jakarta.validation.constraints.NotBlank
-
-data class UserLoginRequest(
-    @field:Email(message = "이메일 형식이 올바르지 않습니다.", regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$")
-    @field:NotBlank(message = "이메일을 입력해주세요.")
-    var email: String,
-    @field:NotBlank(message = "비밀번호를 입력해주세요.")
-    var password: String
-)
+version https://git-lfs.github.com/spec/v1
+oid sha256:8a66d61661e37b9978c3034103c9021630ed6557f9e14bf5c29f87cace8ffbb6
+size 508
