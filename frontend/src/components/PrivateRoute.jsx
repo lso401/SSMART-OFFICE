@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:193c9a7de1ebdd76f9fe5bcf669fa6654a998ef0a3ac1d9c7a768d0130a2096f
-size 333
+import { Navigate, Outlet } from "react-router-dom";
+import useAuthStore from "@/store/authStore";
+
+const PrivateRoute = () => {
+  const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
+
+  if (!isAuthenticated) {
+    return <Navigate to="/login" replace />;
+  }
+  return <Outlet />;
+};
+
+export default PrivateRoute;
