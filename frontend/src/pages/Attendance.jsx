@@ -1,13 +1,3 @@
-import React from "react";
-import MemberList from "@/components/Message/MemberList";
-import styles from "@/styles/Attendance/Member.module.css";
-const Attendance = () => {
-  return (
-    <div>
-      <div className={styles}></div>
-      <MemberList memberData={memberData} onMemberSelect={handleMemberSelect} />
-    </div>
-  );
-};
-
-export default Attendance;
+version https://git-lfs.github.com/spec/v1
+oid sha256:b647ca101a97f161e0274aad6907149586c5ea9ce8b25c57b861a4fce183d2c4
+size 2598
