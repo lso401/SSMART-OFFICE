@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1366003dde6aaab696a31c54b9240a3f1260056c2bfc39b39ee4ed04c06969fe
-size 295
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-html
+  namespace: dev
+data:
+  index.html: |
+    <html>
+    <head><title>Welcome to Nginx!</title></head>
+    <body>
+    <h1>Hello from Nginx!</h1>
+    <p>This is a simple frontend service running in Kubernetes.</p>
+    </body>
+    </html>
+
