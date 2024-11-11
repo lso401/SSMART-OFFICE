@@ -1,5 +1,3 @@
-package org.ssmartoffice.userservice.domain
-
-enum class UserStatus {
-    ACTIVE, BREAK, OFF_DUTY, ON_DUTY //일하는 중, 휴식 중, 퇴근, 출근 (수정 가능)
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:1ea1eef47461f26073152959fbaca1464592bbe39b14d2182433defecd64b3c6
+size 167
