@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6472c62b7da743bd0321ab1d3bd6083455c03f9cd9b7b57432d30fcf24a0f65f
-size 368
+package org.ssmartoffice.authenticationservice.controller.request
+
+import jakarta.validation.constraints.NotBlank
+
+data class TokenRefreshRequest(
+    @field:NotBlank(message = "만료된 엑세스 토큰을 담아주세요.")
+    val expiredAccessToken: String,
+    @field:NotBlank(message = "리프레시 토큰을 담아주세요.")
+    val refreshToken: String,
+)

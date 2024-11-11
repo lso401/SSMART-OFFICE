@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:24114dbbb30afd7f7134dee1138f6cf067f6fd513cb1f364be769ed4c39cdc05
-size 271
+.button {
+  all: unset;
+  width: 175px;
+  height: 45px;
+  border-radius: 5px;
+  border: 1px solid var(--text-description);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+}
+.button:hover {
+  cursor: pointer;
+}
