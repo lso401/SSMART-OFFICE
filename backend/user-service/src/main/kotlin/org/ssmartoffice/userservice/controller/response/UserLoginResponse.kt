@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fc9ab1e715c228e988ff47e85abf886b2649b5cf594c6252135dd1c431813825
-size 445
+package org.ssmartoffice.userservice.controller.response
+
+import org.ssmartoffice.userservice.domain.Role
+import org.ssmartoffice.userservice.domain.User
+
+class UserLoginResponse(
+    val userId: Long = 0,
+    var role: Role
+) {
+    companion object {
+        fun fromModel(user: User): UserLoginResponse {
+            return UserLoginResponse(
+                userId = user.id,
+                role = user.role,
+            )
+        }
+    }
+}
