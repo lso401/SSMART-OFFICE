@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0b0ce107b71c9d4b7f70a415b6cb3bd69faaffbb6b55056f9541124910dc50ed
-size 648
+package org.ssmartoffice.assignmentservice.service.port
+
+import org.ssmartoffice.assignmentservice.domain.Assignment
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.Pageable
+import org.springframework.stereotype.Repository
+
+@Repository
+interface AssignmentRepository {
+    fun save(assignment: Assignment): Assignment
+}
