@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8a52d5c0ff81dbef9251da59b1f71912af281005403cb98e25fec76088ed44dc
-size 353
+package org.ssmartoffice.attendanceservice.client.response
+
+import javax.management.relation.Role
+
+class UserInfoResponse(
+    val id: Long = 0,
+    val employeeNumber: String,
+    val email: String,
+    val name: String,
+    val position: String,
+    val duty: String,
+    val profileImageUrl: String,
+    var role: Role,
+    val phoneNumber:String?
+)

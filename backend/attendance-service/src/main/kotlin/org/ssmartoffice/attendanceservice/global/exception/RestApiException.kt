@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8844bf4f65455adeedf77e9022c384f57c0a4c471b989ea69fcab5f4a09d54b5
-size 307
+package org.ssmartoffice.attendanceservice.global.exception
+
+import org.ssmartoffice.attendanceservice.global.const.errorcode.ErrorCode
+
+class RestApiException(val errorCode: ErrorCode) : RuntimeException() {
+
+    companion object {
+        private const val serialVersionUID = 8747231388755467240L
+    }
+}
