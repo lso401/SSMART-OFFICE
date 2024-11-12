@@ -1,3 +1,1 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a1e9fa5dc76107717750cfb3a902c7707f7f9ba1f34443a9549f84fdd11010a1
-size 34
+rootProject.name = 'file-service'
