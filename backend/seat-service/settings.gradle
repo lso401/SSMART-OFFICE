@@ -1,3 +1,1 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:48b5e1c0ad382588210eeea78634b041088dcf9b42c6632e79d4905c9d8af5d1
-size 34
+rootProject.name = 'seat-service'

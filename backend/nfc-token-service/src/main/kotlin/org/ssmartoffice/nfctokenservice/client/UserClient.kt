@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:591a35aa507f218b4d84ff2b2127d075245dd43ae0efba913582571dbf1f1f83
-size 321
+package org.ssmartoffice.nfctokenservice.client
+
+import org.springframework.cloud.openfeign.FeignClient
+import org.springframework.web.bind.annotation.GetMapping
+
+@FeignClient(name = "user-service")
+interface UserClient {
+
+    @GetMapping("/api/v1/users/authentication")
+    fun getAuthentication(email: String): String
+}

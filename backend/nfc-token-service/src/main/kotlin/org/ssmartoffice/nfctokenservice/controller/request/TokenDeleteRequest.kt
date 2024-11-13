@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c2f214cfe21956433e0a3cf31d7b40a684fb42482bb99eea9b070e641c8f899b
-size 339
+package org.ssmartoffice.nfctokenservice.controller.request
+
+import jakarta.validation.constraints.NotBlank
+
+data class TokenDeleteRequest(
+    @field:NotBlank(message = "이메일을 입력해주세요.")
+    val email: String,
+    @field:NotBlank(message = "하드웨어 인증코드를 입력해주세요.")
+    val authCode: String,
+)

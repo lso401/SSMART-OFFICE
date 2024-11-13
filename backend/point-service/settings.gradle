@@ -1,3 +1,1 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:787f744b33bb93bed3d6d241a11269f75f91d6d311d44f06b4bbf40bcc34e1b2
-size 35
+rootProject.name = 'point-service'
