@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:243f331ca4c27bfe4d4d4c21993ee3ff484bd49dce9504b7982a9ceceeace9e9
-size 135
+import api from "./api";
+
+// 전체 사용자 목록 조회
+export const fetchUserList = () => {
+  return api.get("/api/v1/users");
+};

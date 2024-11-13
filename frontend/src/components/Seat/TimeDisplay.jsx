@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a5d41077c6d763c645b7ada9f6bb20ec2fe8514deec1ea248f232538b7cd78eb
-size 476
+import dayjs from "dayjs";
+import "dayjs/locale/ko";
+import { useEffect, useState } from "react";
+dayjs.locale("ko");
+
+const TimeDisplay = () => {
+  const [today, setToday] = useState(dayjs());
+
+  useEffect(() => {
+    const updateCurrentTime = () => setToday(dayjs());
+    const interval = setInterval(updateCurrentTime, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return <>{today.format("YYYY.MM.DD ddd요일 HH:mm:ss")}</>;
+};
+export default TimeDisplay;
