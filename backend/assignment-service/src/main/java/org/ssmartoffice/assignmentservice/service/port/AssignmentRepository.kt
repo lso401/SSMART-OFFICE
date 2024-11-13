@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:12cc5df2471694cd139957492179913ae68bfc6db2c96910d34aa0eae6b82913
-size 488
+package org.ssmartoffice.assignmentservice.service.port
+
+import org.ssmartoffice.assignmentservice.domain.Assignment
+import org.springframework.stereotype.Repository
+
+@Repository
+interface AssignmentRepository {
+    fun save(assignment: Assignment): Assignment
+    fun findByUserIdAndDate(userId: Long, date: String): List<Assignment>
+    fun findByUserIdAndDateBetween(userId: Long, startDate: String, endDate: String): List<Assignment>
+    fun findById(assignmentId: Long): Assignment
+}

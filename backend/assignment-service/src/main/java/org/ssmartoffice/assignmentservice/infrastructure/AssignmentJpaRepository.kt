@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:07b365848a989575ef47a3e119e534aef516bd5d366909162afc0394911a31fb
-size 449
+package org.ssmartoffice.assignmentservice.infrastructure
+
+import org.springframework.data.jpa.repository.JpaRepository
+import org.springframework.stereotype.Repository
+
+@Repository
+interface AssignmentJpaRepository : JpaRepository<AssignmentEntity, Long> {
+    fun findByUserIdAndDate(userId: Long, date: String): List<AssignmentEntity>
+    fun findByUserIdAndDateBetween(userId: Long, startDate: String, endDate: String): List<AssignmentEntity>
+}
