@@ -1,10 +1,3 @@
-package org.ssmartoffice.pointservice.global.exception
-
-import org.ssmartoffice.pointservice.global.const.errorcode.ErrorCode
-
-class RestApiException(val errorCode: ErrorCode) : RuntimeException() {
-
-    companion object {
-        private const val serialVersionUID = 8747231388755467240L
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:99f81091c724e11846e187ec94090fdf67843b69e886599995229e68b7101436
+size 297

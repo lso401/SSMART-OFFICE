@@ -1,10 +1,3 @@
-package org.ssmartoffice.pointservice.global.const.errorcode
-
-import org.springframework.http.HttpStatus
-import java.io.Serializable
-
-interface ErrorCode : Serializable {
-    val httpStatus: HttpStatus
-    val message: String
-    val name: String
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:c1bf803c237acf5f5d219fe308b3071d19d6c6c8fa15cf47df9d7d5757bd24b5
+size 249

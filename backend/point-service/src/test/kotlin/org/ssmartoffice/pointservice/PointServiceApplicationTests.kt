@@ -1,13 +1,3 @@
-package org.ssmartoffice.pointservice
-
-import org.junit.jupiter.api.Test
-import org.springframework.boot.test.context.SpringBootTest
-
-@SpringBootTest
-class PointServiceApplicationTests {
-
-    @Test
-    fun contextLoads() {
-    }
-
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:c606836121ec8e14e0b9bcaa25216fb12c5c5b2bdc20d7bc30439e14573cf007
+size 232
