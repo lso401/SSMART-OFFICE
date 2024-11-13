@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ce38a194ef811b16b3a89e684aa5aaa2105360f58bd336757ffaf697e3355d0b
-size 481
+import React from "react";
+import styles from "@/styles/Message/Message.module.css";
+import Search from "@/assets/Common/Search.svg?react";
+
+const SearchBar = ({ placeholder = "직원을 검색하세요" }) => {
+  return (
+    <div className={styles.search_bar_container}>
+      <Search className={styles.search_icon} />
+      <input
+        type="text"
+        className={styles.search_bar}
+        placeholder={placeholder}
+      />
+    </div>
+  );
+};
+
+export default SearchBar;
