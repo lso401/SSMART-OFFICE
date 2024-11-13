@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:021920083d8ff82f06c5b04eb23b8fdc6f31d30d4f27d23e7eb18d014886efb9
-size 322
+package org.ssmartoffice.attendanceservice.global.const.errorcode
+
+import org.springframework.http.HttpStatus
+
+enum class AttendanceErrorCode(override val httpStatus: HttpStatus, override val message: String) : ErrorCode {
+    ATTENDANCE_ALREADY_EXIST(HttpStatus.BAD_REQUEST, "이미 퇴근 정보가 존재합니다."),
+}

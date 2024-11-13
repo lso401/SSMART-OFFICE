@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e32cd277633cbe09c802ca8c06975a01569ad35f68cfee109a972ebf10f3c77e
-size 316
+package org.ssmartoffice.attendanceservice.global.const.errorcode
+
+import org.springframework.http.HttpStatus
+
+enum class UserErrorCode(override val httpStatus: HttpStatus, override val message: String) : ErrorCode {
+    ACCESS_ADMIN_DENIED(HttpStatus.UNAUTHORIZED, "해당 api에 접근 권한이 없습니다."),
+}

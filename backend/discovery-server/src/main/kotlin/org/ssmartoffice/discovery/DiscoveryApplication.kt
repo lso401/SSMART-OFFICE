@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8d68e194f99696a2ebcbb5ed36faa876571975e31295532aaada8bd230ede450
-size 376
+package org.ssmartoffice.discovery
+
+import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.runApplication
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer
+
+@SpringBootApplication
+@EnableEurekaServer
+class DiscoveryApplication
+
+fun main(args: Array<String>) {
+	runApplication<DiscoveryApplication>(*args)
+}
