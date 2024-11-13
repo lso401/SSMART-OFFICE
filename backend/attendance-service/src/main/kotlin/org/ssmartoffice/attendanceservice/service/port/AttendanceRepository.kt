@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9bb91e55d63f885c474332bc93e7cf9d81d6109f0588de8deb7b620841f4e446
-size 480
+package org.ssmartoffice.attendanceservice.service.port
+
+import org.ssmartoffice.attendanceservice.domain.Attendance
+
+interface AttendanceRepository {
+    fun saveAttendance(attendance: Attendance) : Attendance
+    fun getAttendanceByUserIdAndDate(userId: Long, date: String): List<Attendance>
+    fun getAttendanceByUserIdAndMonth(userId: Long, month: String): List<Attendance>
+    fun isEnteredUserToday(userId: Long): Boolean
+
+    fun isExitedUserToday(userId: Long): Boolean
+}

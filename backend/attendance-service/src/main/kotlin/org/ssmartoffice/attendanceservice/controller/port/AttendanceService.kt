@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:733a8e21fc180b15675124f287ff3be3f90e622af081ae4e4fce1f0073d51343
-size 439
+package org.ssmartoffice.attendanceservice.controller.port
+
+import org.ssmartoffice.attendanceservice.controller.response.AttendanceResponse
+
+interface AttendanceService {
+    fun createAttendance(userEmail: String): AttendanceResponse
+    fun getAttendanceByDate(userEmail: String, month: String, date: String?): List<AttendanceResponse>
+    fun getAttendanceByDate(userId: Long, month: String, date: String?): List<AttendanceResponse>
+
+}
