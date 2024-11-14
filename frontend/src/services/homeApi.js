@@ -1,11 +1,3 @@
-import api from "./api";
-
-// 캘린더 정보 전체 조회
-export const fetchCalendarData = (month, day) => {
-  return api.get(`/api/v1/assignments?month=${month}&day=${day}`);
-};
-
-// 내 출퇴근 정보 조회
-export const fetchAttendanceData = (month, day) => {
-  return api.get(`/api/v1/attendances/me?month=${month}&day=${day}`);
-};
+version https://git-lfs.github.com/spec/v1
+oid sha256:c800275149ec77db127f44d4a5994e9fe79213990afa0d5df8182b8ea50f50bf
+size 956
