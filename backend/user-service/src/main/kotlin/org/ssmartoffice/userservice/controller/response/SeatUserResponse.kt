@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f0a862aa21568c731b6ca178854be3794ae6318ee2239d64b31db770b15263cf
-size 516
+package org.ssmartoffice.userservice.controller.response
+
+data class SeatUserResponse(
+    val userId: Long = 0,
+    var name: String,
+    var position: String,
+    var duty: String,
+){
+}
