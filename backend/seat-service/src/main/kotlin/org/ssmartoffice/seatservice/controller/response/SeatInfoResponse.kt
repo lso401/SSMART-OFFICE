@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3d4a68185a744ca38140edbd895ad60ce77b98d061e7072d84514f3c31056870
-size 977
+package org.ssmartoffice.seatservice.controller.response
+
+import org.ssmartoffice.seatservice.domain.SeatStatus
+import java.time.LocalDateTime
+
+data class SeatInfoResponse(
+    val id: Long = 0,
+    val info: String,
+    val status: SeatStatus,
+    val userId: Long?,
+    val userName: String?,
+    val userPosition: String?,
+    val userDuty: String?,
+    val lastUpdatedDateTime: LocalDateTime?
+)
