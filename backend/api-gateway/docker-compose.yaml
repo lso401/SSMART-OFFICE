@@ -1,13 +1,13 @@
 version: '3.8'
 services:
-  point-service:
-    image: "parksangcheon/backend-repo-point-service:${COMMIT_HASH:-latest}"
-    container_name: point-service-container
+  api-gateway:
+    image: "parksangcheon/backend-repo-api-gateway:${COMMIT_HASH:-latest}"
+    container_name: api-gateway-container
+    env_file:
+      - .env
     depends_on:
       - config-server
       - discovery-server
-    env_file:
-      - .env
     networks:
       - app-network
     restart: always
