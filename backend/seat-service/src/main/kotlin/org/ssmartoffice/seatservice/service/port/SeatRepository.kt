@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c8ad1330001a650c6869c8791362348d88297dbd05ea75fbac91fd052913ddaa
-size 423
+package org.ssmartoffice.seatservice.service.port
+
+import org.springframework.stereotype.Repository
+import org.ssmartoffice.seatservice.domain.Seat
+import org.ssmartoffice.seatservice.domain.SeatStatus
+
+@Repository
+interface SeatRepository {
+    fun findAllByFloor(floor: Int): List<Seat>
+    fun findById(id: Long): Seat
+    fun save(seat: Seat)
+    fun existsByUserIdAndStatus(userId: Long, status: SeatStatus): Boolean
+}
