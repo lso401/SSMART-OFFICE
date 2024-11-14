@@ -1,8 +1,8 @@
 version: '3.8'
 services:
-  attendance-service:
-    image: "parksangcheon/backend-repo-attendance-service:${COMMIT_HASH:-latest}"
-    container_name: attendance-service-container
+  nfc-token-service:
+    image: "parksangcheon/backend-repo-nfc-token-service:${COMMIT_HASH:-latest}"
+    container_name: nfc-token-service-container
     depends_on:
       - config-server
       - discovery-server
