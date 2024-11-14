@@ -1,16 +1,3 @@
-package org.ssmartoffice.seatservice.domain
-
-import jakarta.validation.constraints.NotBlank
-import java.time.LocalDateTime
-
-data class Seat(
-    val id: Long = 0,
-    val userId: Long?,
-    @field:NotBlank(message = "층 정보가 없습니다.")
-    val floor: Int,
-    @field:NotBlank(message = "좌석 상태가 없습니다.")
-    val status: SeatStatus,
-    @field:NotBlank(message = "좌석 정보가 없습니다.")
-    val info: String,
-    val updatedDateTime: LocalDateTime?
-)
+version https://git-lfs.github.com/spec/v1
+oid sha256:8b73fb6d93409341d6513b14889eded09804f2574e9ba84f852419e31d1c9948
+size 777
