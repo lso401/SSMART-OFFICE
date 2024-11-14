@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:17e21dccc368de812e33707158ce4acaa7447fca6d8f915a0c103e07f2e811da
-size 296
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/discovery.main.iml" filepath="$PROJECT_DIR$/.idea/modules/discovery.main.iml" />
+    </modules>
+  </component>
+</project>
