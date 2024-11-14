@@ -1,8 +1,3 @@
-package org.ssmartoffice.seatservice.domain
-
-enum class SeatStatus {
-    IN_USE, //사용 중
-    VACANT, //사용 가능
-    UNAVAILABLE, //사용 불가
-    NOT_OCCUPIED //자리 비움
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:b42d5373707ce62bbd4451a2cdfd69ae9e93d08a25331d6a76e5e631c268b10d
+size 189
