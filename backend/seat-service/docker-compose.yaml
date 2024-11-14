@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b8a2974894fb37bc17b6ade51085bbf86949698e8241473d6bbb5f13a2c60e35
-size 332
+version: '3.8'
+services:
+  seat-service:
+	  image: parksangcheon/backend-repo-seat-service:${COMMIT_HASH}
+    container_name: seat-service-container
+    depends_on:
+      - config-server
+      - discovery-server
+    env_file:
+      - .env
+    networks:
+      - app-network
+    restart: always
+
+networks:
+  app-network:
+    external: true
+
