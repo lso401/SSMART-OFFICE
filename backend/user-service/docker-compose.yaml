@@ -1,8 +1,8 @@
 version: '3.8'
 services:
-  file-service:
-    image: "parksangcheon/backend-repo-file-service:${COMMIT_HASH:-latest}"
-    container_name: file-service-container
+  user-service:
+    image: "parksangcheon/backend-repo-user-service:${COMMIT_HASH:-latest}"
+    container_name: user-service-container
     depends_on:
       - config-server
       - discovery-server
@@ -15,4 +15,3 @@ services:
 networks:
   app-network:
     external: true
-
