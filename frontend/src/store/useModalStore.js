@@ -1,16 +1,3 @@
-import { create } from "zustand";
-
-const useModalStore = create((set) => ({
-  modals: [],
-  openModal: (Component, props) =>
-    set((state) => {
-      const updateModals = [...state.modals, { Component, props }];
-      return { modals: updateModals };
-    }),
-  closeModal: (Component) =>
-    set((state) => ({
-      modals: state.modals.filter((modal) => modal.Component !== Component),
-    })),
-}));
-
-export default useModalStore;
+version https://git-lfs.github.com/spec/v1
+oid sha256:f570cf16d37842d6001816074b8d63b83bc321668c6d863c19189253d52d1b62
+size 434
