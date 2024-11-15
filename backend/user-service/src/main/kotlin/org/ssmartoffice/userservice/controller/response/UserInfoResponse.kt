@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2322bd97aa25f639cd380582940cc4e4006509731c401f891721cb991d571de0
-size 1044
+package org.ssmartoffice.userservice.controller.response
+
+import org.ssmartoffice.userservice.domain.Role
+import org.ssmartoffice.userservice.domain.UserStatus
+
+class UserInfoResponse(
+    val userId: Long = 0,
+    val employeeNumber: String,
+    val email: String,
+    val name: String,
+    val position: String,
+    val duty: String,
+    val profileImageUrl: String,
+    var role: Role,
+    val status: UserStatus,
+    val phoneNumber: String?
+)
