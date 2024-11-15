@@ -1,10 +1,3 @@
-package org.ssmartoffice.seatservice.controller.request
-
-import jakarta.validation.constraints.NotNull
-import org.ssmartoffice.seatservice.domain.SeatStatus
-
-data class SeatUpdateRequest(
-
-    @field:NotNull(message = "좌석 상태를 입력해주세요.")
-    val status: SeatStatus,
-)
+version https://git-lfs.github.com/spec/v1
+oid sha256:fac2a3bec51ca19ca31ebaf0aa477d7bc740a5f6becde5ab02ecd82545175c5d
+size 288
