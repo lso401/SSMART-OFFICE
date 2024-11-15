@@ -1,12 +1,3 @@
-package org.ssmartoffice.seatservice.controller.port
-
-import org.ssmartoffice.seatservice.controller.request.SeatUpdateRequest
-import org.ssmartoffice.seatservice.domain.Seat
-import org.ssmartoffice.seatservice.domain.User
-
-interface SeatService {
-    fun getSeatsByFloor(floor: Int): List<Seat>
-    fun getUsersAtSeats(seats: List<Seat>): List<User>
-    fun changeSeatStatus(id: Long, seatUpdateRequest: SeatUpdateRequest): Seat
-    fun getUserAtSeat(seat: Seat): User?
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:f3441d14f6770313f747a764e1882d786289aef8e725c6dcae7638b3f886ef5d
+size 500
