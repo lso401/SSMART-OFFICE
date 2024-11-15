@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fea734601286c265152c32dbb622889a41b05b9b204cbca96e67ac7ee19d9dbe
-size 675
+package org.ssmartoffice.pointservice.controller.response
+
+import com.fasterxml.jackson.annotation.JsonInclude
+import java.time.LocalDateTime
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+data class PointInfoResponse(
+    val id: Long? = null,
+    val marketName: String? = null,
+    val amount: Int? = null,
+    val balance: Int? = null,
+    val transactionTime: LocalDateTime? = null,
+    val item: String? = null,
+    val quantity: Int? = null,
+)
