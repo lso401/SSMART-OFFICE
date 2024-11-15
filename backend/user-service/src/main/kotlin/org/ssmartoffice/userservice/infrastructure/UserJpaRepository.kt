@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ce8b94420549cad93f1742a3adeab2057d0f11e73ca869c79d84e3a03224820e
-size 494
+package org.ssmartoffice.userservice.infrastructure
+
+import org.springframework.data.jpa.repository.JpaRepository
+import org.springframework.stereotype.Repository
+
+@Repository
+interface UserJpaRepository : JpaRepository<UserEntity, Long> {
+    fun findByEmail(email: String): UserEntity
+    fun findTopByEmployeeNumberStartingWithOrderByEmployeeNumberDesc(prefix: String): UserEntity
+    fun existsByEmail(adminEmail: String): Boolean
+    fun findAllByIdIn(ids: List<Long>): List<UserEntity>
+}
