@@ -1,12 +1,3 @@
-package org.ssmartoffice.pointservice.service.port
-
-import org.springframework.data.domain.Page
-import org.springframework.data.domain.Pageable
-import org.springframework.stereotype.Repository
-import org.ssmartoffice.pointservice.domain.PointHistory
-import java.time.LocalDate
-
-@Repository
-interface PointHistoryRepository {
-    fun findByUserIdAndTransactionTimeBetween(userId: Long, startDate: LocalDate, endDate: LocalDate, pageable: Pageable): Page<PointHistory>
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:cc73ad52c3e9a4ebc8ea17d1bd2dac95413c07988059bbfb4fe1c114ea83ef29
+size 547
