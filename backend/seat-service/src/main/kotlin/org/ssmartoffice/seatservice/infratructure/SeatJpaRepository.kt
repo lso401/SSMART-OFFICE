@@ -1,9 +1,3 @@
-package org.ssmartoffice.seatservice.infratructure
-
-import org.springframework.data.jpa.repository.JpaRepository
-import org.springframework.stereotype.Repository
-
-@Repository
-interface SeatJpaRepository : JpaRepository<SeatEntity, Long> {
-    fun findAllByFloor(floor: Int): List<SeatEntity>
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:66086ce28b553308a2ab260e933d83c2caeefa687db0ea60b07c50276b8a0766
+size 293
