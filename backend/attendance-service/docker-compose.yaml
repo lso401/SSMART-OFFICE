@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:243f38052295b3ee37d2230ca115acf5b7d1968c2b95392797b4053c58567810
-size 368
+version: '3.8'
+services:
+  attendance-service:
+    image: "parksangcheon/backend-repo-attendance-service:${COMMIT_HASH:-latest}"
+    container_name: attendance-service-container
+    depends_on:
+      - config-server
+      - discovery-server
+    env_file:
+      - .env
+    networks:
+      - app-network
+    restart: always
+
+networks:
+  app-network:
+    external: true
+
