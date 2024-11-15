@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ef87c00e17484eae2122a7de4d94eba8243b8dc8727f395ddf1183e68b4a7f76
-size 439
+package org.ssmartoffice.pointservice.service.port
+
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.Pageable
+import org.springframework.stereotype.Repository
+import org.ssmartoffice.pointservice.domain.Point
+import java.time.LocalDate
+
+@Repository
+interface PointRepository {
+    fun findByUserIdAndUseDateBetween(userId: Long, startDate: LocalDate, endDate: LocalDate, pageable: Pageable): Page<Point>
+}
