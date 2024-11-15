@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5b73746c042abcd1246e94e910e2bb03c81b542019d8decfa982e6695a35dbb9
-size 292
+package org.ssmartoffice.seatservice.global.const.successcode
+
+import org.springframework.http.HttpStatus
+
+enum class SuccessCode(private val httpStatus: HttpStatus) {
+    OK(HttpStatus.OK),
+    CREATED(HttpStatus.CREATED);
+
+    fun getValue(): Int {
+        return httpStatus.value()
+    }
+}
