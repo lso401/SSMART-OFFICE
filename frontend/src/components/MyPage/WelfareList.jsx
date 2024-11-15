@@ -1,13 +1,3 @@
-import styles from "@/styles/MyPage/WelfareList.module.css";
-
-const WelfareList = () => {
-  return (
-    <>
-      <div className={styles.title}>복지 포인트 내역</div>
-      <div className={styles.table}>
-        <div></div>
-      </div>
-    </>
-  );
-};
-export default WelfareList;
+version https://git-lfs.github.com/spec/v1
+oid sha256:1705b0af123b9fc167f4aa5cbac62783338390c3bec08057c53e2e3d0197b531
+size 1225
