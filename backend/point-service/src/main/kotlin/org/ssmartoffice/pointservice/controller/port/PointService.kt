@@ -1,10 +1,3 @@
-package org.ssmartoffice.pointservice.controller.port
-
-import org.springframework.data.domain.Page
-import org.springframework.data.domain.Pageable
-import org.ssmartoffice.pointservice.domain.Point
-import java.time.LocalDate
-
-interface PointService {
-    fun getPointsByDateRangeAndId(startDate: LocalDate, endDate: LocalDate, pageable: Pageable, userId: Long): Page<Point>
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:4725594795796ceff84065f462b5a70566d44b8d1e48d76a9be8de6dc8a88c11
+size 374

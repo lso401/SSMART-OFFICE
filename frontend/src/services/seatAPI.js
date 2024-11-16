@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:54243e88ec6ffdf22cf42ce63bcbeda0ce8c7026c2a1fc5a2acfadb3bdb1ede2
-size 296
+import api from "@/services/api";
+
+// 좌석 조회
+export const fetchSeats = async (floor) => {
+  try {
+    const response = await api.get(`/seats?floor=${floor}`);
+    return response.data.data;
+  } catch (e) {
+    throw e.response ? e.response.data : new Error("좌석 조회 실패");
+  }
+};
