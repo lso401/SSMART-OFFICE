@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f67daf1f230faad7e153374e477877b79c398e9fd89ec12399da52f478b84463
-size 367
+package org.ssmartoffice.authenticationservice.controller.port
+
+import org.ssmartoffice.authenticationservice.controller.request.TokenRefreshRequest
+import org.ssmartoffice.authenticationservice.domain.CustomUserDetails
+
+interface AuthService {
+    fun refreshToken(request: TokenRefreshRequest): String?
+    fun deleteToken(userDetails: CustomUserDetails): Boolean
+}
