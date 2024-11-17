@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bc14ec8fb8f71406b2554724f5040f8082d47a1affc0b17653c5f3479a6d864c
-size 410
+version: '3.8'
+services:
+  config-server:
+    image: "parksangcheon/backend-repo-config-server:${COMMIT_HASH:-latest}"
+    container_name: config-server-container
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8888/actuator/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    networks:
+      - app-network
+    restart: always
+
+networks:
+  app-network:
+    external: true
+
