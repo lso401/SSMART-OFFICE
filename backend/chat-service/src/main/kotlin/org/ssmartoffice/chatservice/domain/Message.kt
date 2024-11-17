@@ -1,14 +1,3 @@
-package org.ssmartoffice.chatservice.domain
-
-import java.time.LocalDateTime
-
-class Message(
-    val id :Long? = null,
-    val userId :Long,
-    val chatroom :ChatRoom,
-    val type :MessageType,
-    val content :String,
-    val deleted :Boolean = false,
-    val createdAt :LocalDateTime = LocalDateTime.now(),
-    val deletedAt :LocalDateTime = LocalDateTime.now()
-)
+version https://git-lfs.github.com/spec/v1
+oid sha256:c30fb2828029960feb122f321af991e12c45a0594a0aa0bf05cf1fce1b06e2fa
+size 314
