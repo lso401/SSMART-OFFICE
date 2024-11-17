@@ -1,14 +1,3 @@
-package org.ssmartoffice.seatservice.infratructure
-
-import org.springframework.stereotype.Repository
-import org.ssmartoffice.seatservice.domain.Seat
-import org.ssmartoffice.seatservice.service.port.SeatRepository
-
-@Repository
-class SeatRepositoryImpl(
-    private val seatJpaRepository: SeatJpaRepository
-) : SeatRepository{
-    override fun findAllByFloor(floor: Int): List<Seat> {
-        return seatJpaRepository.findAllByFloor(floor).map{ seatEntity -> seatEntity.toModel() }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:3b763512619bf2d71330a9edd235ba52de2ba4c6ed29a07c890ccb5cbdaac84e
+size 487
