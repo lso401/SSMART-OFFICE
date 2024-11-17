@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9f1079f2bf61286a60b90acf084cacbfc5064f6269a05cb7f51ec60451ae4db6
-size 342
+package org.ssmartoffice.chatservice.infrastructure
+
+import feign.Param
+import org.springframework.data.jpa.repository.JpaRepository
+import org.springframework.data.jpa.repository.Query
+import java.util.*
+
+interface ChatRoomJpaRepository :JpaRepository<ChatroomEntity, Long> {
+
+    override fun findById(id: Long): Optional<ChatroomEntity>
+}
