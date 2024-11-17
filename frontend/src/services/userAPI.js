@@ -1,12 +1,3 @@
-import api from "@/services/api";
-// 유저 등록
-export const registerUser = async (userData) => {
-  try {
-    console.log("유저 API : ", userData);
-    const response = await api.post("/users", userData);
-    console.log("유저 API : ", response.data);
-    return response.data;
-  } catch (error) {
-    console.log(error);
-  }
-};
+version https://git-lfs.github.com/spec/v1
+oid sha256:1756cdaa60ec2e16d17a64c4b1c9b9d69d5134e948492991c1e7d76f4767d0e3
+size 737
