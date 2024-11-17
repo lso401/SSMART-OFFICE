@@ -1,8 +1,3 @@
-import { create } from "zustand";
-import { persist } from "zustand/middleware";
-
-const useHomeStore = create(
-  persist((set) => ({
-    // 채팅방 최신순 전체 조회
-  }))
-);
+version https://git-lfs.github.com/spec/v1
+oid sha256:94783cad7e6aa5a751a72d2258bcc1682e075b65153e7d3504316ac247a20870
+size 3094
