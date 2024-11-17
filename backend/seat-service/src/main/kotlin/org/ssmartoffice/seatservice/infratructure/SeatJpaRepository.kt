@@ -1,10 +1,3 @@
-package org.ssmartoffice.seatservice.infratructure
-
-import org.springframework.data.jpa.repository.JpaRepository
-import org.springframework.stereotype.Repository
-
-@Repository
-interface SeatJpaRepository : JpaRepository<SeatEntity, Long> {
-    fun findAllByFloor(floor: Int): List<SeatEntity>
-    fun existsByUserIdAndIdNot(userId: Long, id: Long): Boolean
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:9cb7c7fe5d4f3a74de8bf0fb77d35b6e105d216092e35d0429badfd88448a1f3
+size 405
