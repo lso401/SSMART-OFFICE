@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3b4790b83cf94efd957d8bea65a18d4b5820ac2d99d7bc52ef55cacd70716a0c
-size 99
+import api from "./api";
+
+// 전체 채팅방 조회 (최신순)
+
+// 채팅방 정보 가져오기
