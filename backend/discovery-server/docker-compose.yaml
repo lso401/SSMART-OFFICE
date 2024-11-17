@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ed2ba2cf3f53723f5a1eb2289d0af8a571a566ecaf1c08d161fc4e99b0256efc
-size 489
+version: '3.8'
+services:
+  discovery-server:
+    image: "parksangcheon/backend-repo-discovery-server:${COMMIT_HASH:-latest}"
+    container_name: discovery-server-container
+    depends_on:
+      - config-server
+    ports:
+      - "8761:8761"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8761/actuator/health"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    networks:
+      - app-network
+    restart: always
+
+networks:
+  app-network:
+    external: true
+
