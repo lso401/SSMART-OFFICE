@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f5bae87a058fdee18bfb78d9bc2bfe462cc83fa1f2f488e009a95fcacf79cdf9
-size 375
+package org.ssmartoffice.seatservice.service
+
+import org.springframework.stereotype.Component
+import org.ssmartoffice.seatservice.domain.Seat
+import org.ssmartoffice.seatservice.domain.SeatStatus
+
+@Component
+class SeatMapper {
+
+    fun updateSeat(seat: Seat, userId: Long?, requestStatus: SeatStatus) {
+        seat.userId = userId
+        seat.status= requestStatus
+    }
+
+}

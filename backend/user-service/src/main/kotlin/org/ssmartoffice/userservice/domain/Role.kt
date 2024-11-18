@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ebd8315a4b3261b07436696adb606466c61100c555f98cc8461cd832a199d6e0
-size 452
+package org.ssmartoffice.userservice.domain
+
+enum class Role {
+    GUEST, USER, ADMIN;
+
+    companion object {
+        fun fromAuthority(authority: String): Role {
+            val roleName = authority.removePrefix("ROLE_")
+            return entries.find { it.name == roleName }
+                ?: throw IllegalArgumentException("존재하지 않는 역할 $authority")
+        }
+    }
+
+    fun isAdmin(): Boolean {
+        return this == ADMIN
+    }
+}
