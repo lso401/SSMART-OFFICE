@@ -1,14 +1,3 @@
-.button {
-  all: unset;
-  /* width: 175px; */
-  height: 45px;
-  border-radius: 5px;
-  border: 1px solid var(--text-description);
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.button:hover {
-  cursor: pointer;
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:804e1d07e746b296ac5f07b9b0029c50018f0a9d9125828a4683f3c972928815
+size 257
