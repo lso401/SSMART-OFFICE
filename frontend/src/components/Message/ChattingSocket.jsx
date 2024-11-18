@@ -1,9 +1,3 @@
-// 소켓 초기화 및 대화 내용을 표시하는 역할
-
-import React from "react";
-
-const ChattingSocket = () => {
-  return <div></div>;
-};
-
-export default ChattingSocket;
+version https://git-lfs.github.com/spec/v1
+oid sha256:65f57f505e4568db178f57a30ac8c8c08e4da07380f46739701ff9fc8bab4e8a
+size 178
