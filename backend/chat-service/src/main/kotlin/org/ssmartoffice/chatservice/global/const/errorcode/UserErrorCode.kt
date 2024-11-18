@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4db1ba0be5573c51b4a2993486dc6256d97a200856e5a2762122eda961981768
-size 310
+package org.ssmartoffice.chatservice.global.const.errorcode
+
+import org.springframework.http.HttpStatus
+
+enum class UserErrorCode(override val httpStatus: HttpStatus, override val message: String) : ErrorCode {
+    ACCESS_ADMIN_DENIED(HttpStatus.UNAUTHORIZED, "해당 api에 접근 권한이 없습니다."),
+}
