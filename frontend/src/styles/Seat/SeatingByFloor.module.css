@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:eff1a8826b246ccb662e0f7b5bddca9aa164d5cb676b56daa3a1e214d9adfd7b
-size 280
+.container {
+  flex: 1;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 6fr 4fr;
+  gap: 30px;
+}
+
+.left,
+.right {
+  background-color: #fff;
+  border-radius: 20px;
+  align-content: center;
+}
+
+.buttonContainer {
+  display: grid;
+  column-gap: 10px;
+  margin: 0 auto;
+}
