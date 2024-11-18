@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e8426e40b382a81ccb988fbc357b1c4711e3a4678b5547ca1ce54500e03a7331
-size 338
+package org.ssmartoffice.pointservice.domain
+
+import java.time.LocalDateTime
+
+data class Transaction(
+    val marketName: String,
+    val amount: Int,
+    val transactionTime: LocalDateTime,
+    val item: String?,
+    val quantity: Int?,
+) {
+    fun checkEnoughBalance(balance: Int): Boolean {
+        return amount + balance >= 0
+    }
+}
