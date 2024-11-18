@@ -1,9 +1,3 @@
-import api from "@/services/api";
-
-// 이미지 파일 등록
-export const updateImageFile = async (file) => {
-  const formData = new FormData();
-  formData.append("file", file);
-  const response = await api.post("/files/upload", formData);
-  return response.data;
-};
+version https://git-lfs.github.com/spec/v1
+oid sha256:978065dee451b609e7dc0279f849fe38aab7713cb4b9c1234e05d1a434ef45c3
+size 298
