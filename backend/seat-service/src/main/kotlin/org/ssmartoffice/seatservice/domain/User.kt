@@ -1,13 +1,3 @@
-package org.ssmartoffice.seatservice.domain
-
-import jakarta.validation.constraints.NotBlank
-
-class User(
-    val userId: Long = 0,
-    @field:NotBlank(message = "이름을 입력해주세요.")
-    var name: String,
-    @field:NotBlank(message = "직급을 입력해주세요.")
-    var position: String,
-    @field:NotBlank(message = "직무를 입력해주세요.")
-    var duty: String,
-)
+version https://git-lfs.github.com/spec/v1
+oid sha256:480906eeb9b14241ef1f71da431d7f4699c7ded7dc2cea2f9131d79909eddb91
+size 392
