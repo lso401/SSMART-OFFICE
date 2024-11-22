@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:404e7bb932e4cda510f7ec06fc0f142a811a4e55e142e7e3797b46911d759fd4
-size 272
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/S11P31B202.iml" filepath="$PROJECT_DIR$/.idea/S11P31B202.iml" />
+    </modules>
+  </component>
+</project>
