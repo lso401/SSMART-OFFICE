@@ -1,13 +1,3 @@
-import Swal from "sweetalert2";
-
-export const handleSuccess = (message, title = "성공") => {
-  // export const handleSuccess = (message, options = {}) => {
-  Swal.fire({
-    icon: "success",
-    title: title,
-    text: message,
-    confirmButtonText: "확인",
-    timer: 3000,
-    timerProgressBar: true,
-  });
-};
+version https://git-lfs.github.com/spec/v1
+oid sha256:96d5fd2967effa105d3b546ba5630273ffe94e3195c875e4e776e9c4de6cd301
+size 317
