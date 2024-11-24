@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:50c31d52af4b99834d2f440d9323f92f1f2429d0ac6c0b037c8e4b20668f941d
-size 1275
+package org.ssmartoffice.chatservice.global.config
+
+import org.springframework.context.annotation.Configuration
+import org.springframework.messaging.simp.config.ChannelRegistration
+import org.springframework.messaging.simp.config.MessageBrokerRegistry
+import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker
+import org.springframework.web.socket.config.annotation.StompEndpointRegistry
+import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer
+import org.ssmartoffice.chatservice.global.handler.ChatHandler
+
+@Configuration
+@EnableWebSocketMessageBroker
+class WebSocketConfig(
+    private val chatHandler: ChatHandler
+) : WebSocketMessageBrokerConfigurer {
+
+    override fun configureMessageBroker(registry: MessageBrokerRegistry) {
+        registry.enableSimpleBroker("/api/v1/chats/ws/queue", "/api/v1/chats/ws/topic")
+        registry.setApplicationDestinationPrefixes("/api/v1/chats/ws/app")
+    }
+
+    override fun registerStompEndpoints(registry: StompEndpointRegistry) {
+        registry.addEndpoint("/api/v1/chats/ws")
+            .setAllowedOriginPatterns("*")
+    }
+
+    override fun configureClientInboundChannel(registration: ChannelRegistration) {
+        registration.interceptors(chatHandler)
+    }
+}

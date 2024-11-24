@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f9d717d7b19af50f09e70a5b77fd7964eff71602e5a0df1faa5cb997dec1f106
-size 640
+import useModalStore from "@/store/useModalStore";
+
+const Modals = () => {
+  const { modals, closeModal } = useModalStore();
+
+  return modals.map((modal, index) => {
+    const { Component, props } = modal;
+    const { onSubmit, ...restProps } = props;
+
+    const onClose = () => {
+      closeModal(Component);
+    };
+
+    const handleSubmit = async () => {
+      if (typeof onSubmit === "function") {
+        await onSubmit();
+      }
+      onClose();
+    };
+
+    return (
+      <Component
+        key={index}
+        onClose={onClose}
+        onSubmit={handleSubmit}
+        {...restProps}
+      />
+    );
+  });
+};
+
+export default Modals;

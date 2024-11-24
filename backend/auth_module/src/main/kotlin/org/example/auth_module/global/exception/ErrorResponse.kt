@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:463ead203857ee10fac4bbc4e0b48983e53c1dde6cf1b4e2b99fbb7604fcdf43
-size 744
+package org.example.auth_module.global.exception
+
+import com.fasterxml.jackson.annotation.JsonInclude
+import org.springframework.validation.FieldError
+
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
+class ErrorResponse(
+    val status: Int = 0,
+    val error: String,
+    val message: String?,
+    val errors: List<ValidationError> = emptyList()
+) {
+    class ValidationError(
+        val field: String,
+        val message: String?
+    ) {
+
+
+        companion object {
+            @JvmStatic
+            fun of(fieldError: FieldError): ValidationError {
+                return ValidationError(
+                    field = fieldError.field,
+                    message = fieldError.defaultMessage
+                )
+            }
+        }
+    }
+}

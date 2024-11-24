@@ -1,3 +1,57 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:45bb5b665c29b9ab338c0762409b2820562e54d4e537cacf16deeedfbd0ece99
-size 890
+.floor {
+  font-size: 1.88rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+.container {
+  width: 75%;
+  height: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  align-content: center;
+  gap: 15px;
+}
+.seat {
+  text-align: center;
+  width: 100%;
+  aspect-ratio: auto 4 / 3;
+  border-radius: 20px;
+}
+.box {
+  color: #fff;
+  height: 100%;
+  margin: 0 auto 0;
+  align-content: center;
+}
+.number {
+  height: 100%;
+  justify-content: center;
+  align-content: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.positionName {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.role {
+  font-size: 1.1rem;
+  margin-bottom: 14px;
+}
+
+.inUse {
+  background-color: var(--blue);
+}
+.vacant {
+  background-color: #d9d9d9;
+}
+.unavailable {
+  background-color: var(--text-description);
+}
+.notOccupied {
+  background-color: #ff4c81;
+}

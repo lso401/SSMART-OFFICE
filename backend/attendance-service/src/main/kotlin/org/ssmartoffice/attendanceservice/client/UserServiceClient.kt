@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:149980fc8b81e115a6ce3e6d476658287373f64b3dbbd0a112431e73ef18a1e8
-size 651
+package org.ssmartoffice.attendanceservice.client
+
+import org.springframework.cloud.openfeign.FeignClient
+import org.springframework.http.ResponseEntity
+import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.RequestParam
+import org.ssmartoffice.attendanceservice.client.response.UserAuthenticationResponse
+import org.ssmartoffice.attendanceservice.global.dto.CommonResponse
+
+@FeignClient(name = "user-service")
+interface UserServiceClient {
+    @GetMapping("/api/v1/users/authentication")
+    fun getIdAndRole(@RequestParam email: String): ResponseEntity<CommonResponse<UserAuthenticationResponse>>
+
+}

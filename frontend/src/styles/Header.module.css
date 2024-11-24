@@ -1,3 +1,88 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bb708bc26a7e22c81841b5c9903331dd37cbcf13672d8ad8590b35f09d8ccde6
-size 1359
+.header {
+  display: flex;
+  align-items: center;
+  margin: 40px auto 0;
+  justify-content: space-between;
+  width: 90%;
+}
+.leftSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.department {
+  color: var(--text-description);
+  display: flex;
+  align-items: center;
+}
+
+.rightIcon {
+  margin-left: 8px;
+  margin-right: 8px;
+  width: 8px;
+  height: 14px;
+}
+.menu {
+  font-size: 24px;
+  font-weight: 700;
+  color: #000000;
+  margin-top: 11px;
+  margin-bottom: 11px;
+  background-color: transparent;
+}
+.userCardContainer {
+  position: relative;
+  display: flex;
+}
+.userInfo {
+  display: flex;
+  cursor: pointer;
+}
+.info {
+  margin: 8px 0 0 10px;
+  display: inline;
+}
+.userNumber {
+  font-size: 12px;
+  margin-bottom: 3px;
+}
+.nameTag {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+.name {
+  color: var(--blue);
+  margin-right: 2px;
+}
+.upIcon {
+  margin-left: 4px;
+}
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 1000;
+  /* margin-right: 45px; */
+}
+.menuItem {
+  padding: 10px 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 12px;
+  color: var(--text-description);
+}
+
+.menuItem:hover {
+  background-color: #f0f0f0;
+}
+
+.profileImage {
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+}

@@ -1,3 +1,48 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7305c4f1516d879832919b0c32ebaeee8952211e1bf54298900823b675e2f1b1
-size 757
+a {
+  text-decoration: none;
+  outline: none;
+}
+
+.button {
+  cursor: pointer;
+  display: flex;
+  color: var(--text-description);
+  align-items: center;
+  margin-bottom: 30px;
+  height: 40px;
+  justify-self: center;
+  width: 170px;
+  padding-left: 20px;
+}
+
+.image {
+  fill: var(--text-description);
+  margin-right: 20px;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.text {
+  font-size: 1rem;
+}
+
+.button:hover {
+  color: var(--blue);
+}
+.activeButton {
+  background-color: #dae4fc;
+  color: var(--blue);
+  position: relative;
+  border-radius: 10px;
+}
+.activeButton::after {
+  content: "";
+  background-color: var(--blue);
+  width: 4px;
+  height: 30px;
+  position: absolute;
+  right: -2px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 0 20px 20px 0;
+}

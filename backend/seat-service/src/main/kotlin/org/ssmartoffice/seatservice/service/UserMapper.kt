@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6f128a396fe987cc3b94e9e0775166628b8d7efc5f0059b947b990d10026c09a
-size 532
+package org.ssmartoffice.seatservice.service
+
+import org.springframework.stereotype.Component
+import org.ssmartoffice.seatservice.client.response.SeatUserResponse
+import org.ssmartoffice.seatservice.domain.User
+
+@Component
+class UserMapper {
+    fun toUser(
+        seatUserResponse: SeatUserResponse
+    ): User {
+        return User(
+            userId = seatUserResponse.userId,
+            name = seatUserResponse.name,
+            position = seatUserResponse.position,
+            duty = seatUserResponse.duty
+        )
+    }
+}

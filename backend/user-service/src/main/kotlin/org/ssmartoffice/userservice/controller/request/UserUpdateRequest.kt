@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2b138d168deb9065590e2bab0666bea769ce84fa686134f9885792ed4dccfc7a
-size 541
+package org.ssmartoffice.userservice.controller.request
+
+import jakarta.validation.constraints.Pattern
+
+data class UserUpdateRequest(
+    val name: String? = null,
+    val position: String? = null,
+    val duty: String? = null,
+    @field:Pattern(message = "유효한 URL 형식이 아닙니다.", regexp = "(http|https)://[a-zA-Z0-9./\\-_~:%]+")
+    val profileImageUrl: String? = null,
+    @field:Pattern(message = "유효한 전화번호 형식이 아닙니다.", regexp = "^\\d{3}-\\d{4}-\\d{4}$")
+    val phoneNumber: String? = null,
+)

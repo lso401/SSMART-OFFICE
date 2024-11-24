@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ccd67230de290fbd81cf968cd84ce956ade48dfebf29c236b751c5bfeaee99f6
-size 1060
+package org.ssmartoffice.authenticationservice.service
+
+import org.springframework.security.authentication.AuthenticationServiceException
+import org.springframework.security.core.userdetails.UserDetails
+import org.springframework.security.core.userdetails.UserDetailsService
+import org.springframework.stereotype.Service
+import org.ssmartoffice.authenticationservice.client.UserServiceClient
+import org.ssmartoffice.authenticationservice.domain.CustomUserDetails
+
+
+@Service
+class CustomUserDetailsService(
+    private val userServiceClient: UserServiceClient
+) : UserDetailsService {
+
+    override fun loadUserByUsername(email: String): UserDetails {
+        val commonResponse = userServiceClient.getIdAndRole(email)
+        val userLoginResponse = commonResponse.body?.data
+            ?: throw AuthenticationServiceException("Invalid login response structure")
+
+        return CustomUserDetails(
+            userId = userLoginResponse.userId,
+            role = userLoginResponse.role,
+            email = email,
+            password = ""
+        )
+    }
+}

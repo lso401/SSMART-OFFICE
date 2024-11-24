@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ece3ca44aedf3cd3bb8857e6efd25689515a33c0d08f199d9b01f2619caf0817
-size 745
+package org.ssmartoffice.nfctokenservice.global.dto
+
+import com.fasterxml.jackson.annotation.JsonInclude
+import org.springframework.validation.FieldError
+
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
+class ErrorResponse(
+    val status: Int = 0,
+    val error: String,
+    val message: String?,
+    val errors: List<ValidationError> = emptyList()
+) {
+    class ValidationError(
+        val field: String,
+        val message: String?
+    ) {
+        companion object {
+            @JvmStatic
+            fun of(fieldError: FieldError): ValidationError {
+                return ValidationError(
+                    field = fieldError.field,
+                    message = fieldError.defaultMessage
+                )
+            }
+        }
+    }
+}

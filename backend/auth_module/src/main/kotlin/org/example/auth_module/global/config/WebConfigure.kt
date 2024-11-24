@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:33fa1bf4d9f3284f7495b2f8be935aac4ecc51d07dc1e437242d67e4a9f5b647
-size 624
+package org.example.auth_module.global.config
+
+import org.springframework.context.annotation.Configuration
+import org.springframework.web.servlet.config.annotation.CorsRegistry
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer
+
+@Configuration
+class WebConfigure : WebMvcConfigurer {
+    override fun addCorsMappings(registry: CorsRegistry) {
+        registry.addMapping("/**")
+            .allowedOriginPatterns("*")
+            .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS")
+            .allowedHeaders("*")
+            .allowCredentials(true)
+            .maxAge(3600)
+    }
+}

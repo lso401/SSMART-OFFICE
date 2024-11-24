@@ -1,3 +1,105 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:aa09440559403b92605666661d2c1a7b68b017447f12bc23f64c9caaa97e2a56
-size 1672
+.close {
+  background: inherit;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  overflow: visible;
+  cursor: pointer;
+  display: flex;
+  justify-self: end;
+}
+.container {
+  height: 90%;
+  width: 100%;
+  margin: 10px 10px;
+}
+.datePickerContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.datePicker {
+  color: var(--text-blue);
+  font-weight: 500;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  width: 125px;
+  text-align: center;
+}
+.titleBox {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 28px;
+  margin-bottom: 11px;
+  font-weight: bold;
+  font-size: 15px;
+}
+.titlePoint {
+  color: red;
+  margin: 0;
+}
+.select {
+  padding: 5px 13px 5px 13px;
+}
+.textarea {
+  width: 90%;
+  height: 150px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  resize: none;
+  font-size: 12px;
+  outline: none;
+  font-family: sans-serif;
+}
+.text {
+  font-size: 0.8rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.input {
+  width: 260px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  padding-left: 10px;
+  font-size: 0.8rem;
+}
+.readOnly {
+  background-color: #eee;
+  color: #777;
+}
+
+.buttonBox {
+  display: flex;
+  justify-content: center;
+  column-gap: 10px;
+  margin-top: 40px;
+}
+.button {
+  font-weight: bold;
+  background: inherit;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  overflow: visible;
+  cursor: pointer;
+  width: 130px;
+  height: 40px;
+}
+.button:disabled {
+  opacity: 0.5;
+}
+.confirm {
+  background-color: var(--blue);
+  border-radius: 5px;
+  color: #fff;
+}
+.cancel {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}

@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b1822a98eac075924fcc97f95f63ca9a48de2b588023cee79739bc993d54415d
-size 612
+package org.ssmartoffice.attendanceservice.domain
+
+import java.time.LocalDateTime
+
+class Attendance(
+    val id :Long? = null,
+    val userId: Long,
+    val type: AttendanceType,
+    val time: LocalDateTime? = null
+) {
+
+    companion object {
+        fun goToWork(userId: Long): Attendance {
+            return Attendance(
+                userId = userId,
+                type = AttendanceType.START
+            )
+        }
+
+        fun leaveWork(userId: Long): Attendance {
+            return Attendance(
+                userId = userId,
+                type = AttendanceType.END
+            )
+        }
+    }
+}

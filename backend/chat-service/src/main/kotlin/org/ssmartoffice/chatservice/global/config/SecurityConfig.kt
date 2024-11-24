@@ -1,3 +1,46 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:41bf7ca58663a4d48034d14f20c3e1402d267b423b08b52f5fec39eb4ec2b945
-size 1739
+package org.ssmartoffice.chatservice.global.config
+
+import org.springframework.context.annotation.Bean
+import org.springframework.context.annotation.Configuration
+import org.springframework.security.config.Customizer
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity
+import org.springframework.security.config.annotation.web.builders.HttpSecurity
+import org.springframework.security.config.annotation.web.configurers.*
+import org.springframework.security.config.http.SessionCreationPolicy
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
+import org.springframework.security.web.SecurityFilterChain
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter
+import org.ssmartoffice.chatservice.global.jwt.JwtAuthenticationFilter
+import org.ssmartoffice.chatservice.global.jwt.JwtUtil
+
+@Configuration
+@EnableMethodSecurity
+class SecurityConfig(
+    private val jwtUtil: JwtUtil
+) {
+
+    @Bean
+    @Throws(Exception::class)
+    fun filterChain(http: HttpSecurity): SecurityFilterChain {
+        http
+            .httpBasic { it.disable() }
+            .cors(Customizer.withDefaults())
+            .csrf { it.disable() }
+            .formLogin { it.disable() }
+            .rememberMe { it.disable() }
+            .sessionManagement { session ->
+                session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+            }
+            .addFilterBefore(
+                JwtAuthenticationFilter(jwtUtil),
+                UsernamePasswordAuthenticationFilter::class.java
+            )
+
+        return http.build()
+    }
+
+    @Bean
+    fun passwordEncoder(): BCryptPasswordEncoder {
+        return BCryptPasswordEncoder()
+    }
+}

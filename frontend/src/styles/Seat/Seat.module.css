@@ -1,3 +1,53 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:db62c345691df642a461e2af4eb73cca3c522396873b3cde995657446b4fdb12
-size 838
+.container {
+  width: 90%;
+  margin: 20px auto 0;
+  justify-content: center;
+  height: calc(100dvh - 140px);
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.date {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 18px;
+}
+.floor {
+  width: 160px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+}
+
+.floor1,
+.floor2,
+.floor3,
+.floor4 {
+  width: 40px;
+  border: 1px solid rgba(160, 160, 160, 0.5);
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: var(--text-description);
+  background-color: #fff;
+}
+
+.floor1 {
+  border-radius: 0 10px 10px 0;
+}
+
+.floor4 {
+  border-radius: 10px 0 0 10px;
+}
+
+.floor1:hover,
+.floor2:hover,
+.floor3:hover,
+.floor4:hover {
+  background-color: var(--whitehover);
+}

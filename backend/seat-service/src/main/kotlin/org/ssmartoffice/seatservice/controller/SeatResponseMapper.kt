@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:61a95dd07fb5090a36d0c5eaa1d57aa3bfdc90d075dcd066f7ecc0225fd3b800
-size 722
+package org.ssmartoffice.seatservice.controller
+
+import org.springframework.stereotype.Component
+import org.ssmartoffice.seatservice.controller.response.SeatInfoResponse
+import org.ssmartoffice.seatservice.domain.Seat
+import org.ssmartoffice.seatservice.domain.User
+
+@Component
+class SeatResponseMapper {
+
+    fun toSeatInfoResponse(seat: Seat, user: User?): SeatInfoResponse {
+        return SeatInfoResponse(
+            id = seat.id,
+            info = seat.info,
+            status = seat.status,
+            userId = seat.userId,
+            userName = user?.name,
+            userPosition = user?.position,
+            userDuty = user?.duty,
+            lastUpdatedDateTime = seat.updatedDateTime
+        )
+    }
+
+}

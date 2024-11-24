@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:31ba01956d64ee779ec3a007c94dde9164076c8fe1a4796c9d936eb69a5387b2
-size 723
+package org.ssmartoffice.nfctokenservice.infrastructure
+
+import org.springframework.data.redis.core.RedisTemplate
+import org.springframework.data.redis.core.ValueOperations
+import org.springframework.stereotype.Repository
+import org.ssmartoffice.nfctokenservice.service.port.NfcTokenRepository
+
+@Repository
+class NfcTokenRepositoryImpl(
+    private val redisTemplate: RedisTemplate<String, String>
+): NfcTokenRepository {
+    override fun saveToken(email: String, token: String) {
+        val valueOperations: ValueOperations<String, String> = redisTemplate.opsForValue()
+        valueOperations.set("$email-nfc", token)
+    }
+    override fun expireToken(email: String) {
+        redisTemplate.delete("$email-nfc")
+    }
+}

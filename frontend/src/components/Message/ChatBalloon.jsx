@@ -1,3 +1,46 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b8fa4f0795b65eae686838f2688ccf169368c6b8c339d404eda4f0d9ef72f69a
-size 1303
+import React from "react";
+import styles from "@/styles/Message/ChatBalloon.module.css";
+
+const ChatBalloon = ({ message, createdTime, isSender, profileImageUrl }) => {
+  const formatTime = (time) => {
+    const date = new Date(time);
+    return `${date.getHours()}:${String(date.getMinutes()).padStart(2, "0")}`;
+  };
+
+  return (
+    <div
+      className={`${styles.balloon_container} ${
+        isSender ? styles.sender : styles.receiver
+      }`}
+    >
+      {!isSender && (
+        <>
+          <img
+            src={profileImageUrl}
+            alt="Profile"
+            className={styles.profile_image}
+          />
+          <div className={styles.balloon_box}>
+            <div className={styles.message_content}>{message}</div>
+          </div>
+          <span className={styles.created_time}>{formatTime(createdTime)}</span>
+        </>
+      )}
+      {isSender && (
+        <>
+          <span className={styles.created_time}>{formatTime(createdTime)}</span>
+          <div className={styles.balloon_box}>
+            <div className={styles.message_content}>{message}</div>
+          </div>
+          <img
+            src={profileImageUrl}
+            alt="Profile"
+            className={styles.profile_image}
+          />
+        </>
+      )}
+    </div>
+  );
+};
+
+export default ChatBalloon;

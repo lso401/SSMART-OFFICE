@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c62ae3493cd1407366e0ff1bef9413ffc4367409518c7d6c70036c254efd4533
-size 827
+package org.example.auth_module.global.auth.service
+
+import org.example.auth_module.global.auth.domain.CustomUserDetails
+import org.example.auth_module.user.domain.User
+import org.example.auth_module.user.service.port.UserRepository
+import org.springframework.security.core.userdetails.UserDetails
+import org.springframework.security.core.userdetails.UserDetailsService
+import org.springframework.security.core.userdetails.UsernameNotFoundException
+import org.springframework.stereotype.Service
+
+@Service
+class CustomUserDetailsService(
+    val userRepository: UserRepository
+) : UserDetailsService {
+
+    @Throws(UsernameNotFoundException::class)
+    override fun loadUserByUsername(userId: String): UserDetails {
+        val user: User? = userRepository.findByLoginId(userId)
+        return CustomUserDetails(user!!)
+    }
+}

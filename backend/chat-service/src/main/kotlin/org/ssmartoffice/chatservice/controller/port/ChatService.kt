@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a11c46a7948d1eca683d7848399e429f6c44b6ce52172c26a6016c3c17149148
-size 692
+package org.ssmartoffice.chatservice.controller.port
+
+import org.ssmartoffice.chatservice.controller.response.GetChatRoomResponse
+import org.ssmartoffice.chatservice.controller.response.MessageResponse
+import org.ssmartoffice.chatservice.domain.ChatRoom
+import org.ssmartoffice.chatservice.domain.Message
+import org.ssmartoffice.chatservice.domain.UserChatRoom
+
+interface ChatService {
+    fun saveMessage(message: Message)
+    fun saveChatRoom(currentUserId: Long, userId: Long): Long
+    fun findUserChatroom(userId: Long, roomId: Long): UserChatRoom?
+    fun findMyChatrooms(userId: Long): List<GetChatRoomResponse>?
+    fun findMessagesByChatroomId(roomId: Long): List<MessageResponse>?
+}
