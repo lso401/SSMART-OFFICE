@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:520ac379b13d3cb523cb2e4b55adf197850127f3074eb36ed926267bf6c5dd8c
-size 662
+package org.ssmartoffice.assignmentservice.controller.request
+
+import jakarta.validation.constraints.NotBlank
+import jakarta.validation.constraints.NotNull
+import org.ssmartoffice.assignmentservice.domain.AssignmentType
+import java.time.LocalDate
+
+data class AssignmentRegisterRequest(
+    @field:NotBlank(message = "이름을 입력해주세요.")
+    val name: String,
+
+    @field:NotNull(message = "날짜를 입력해주세요.")
+    val date: LocalDate,
+
+    @field:NotNull(message = "유효한 일정 타입을 입력해주세요.")
+    val type: AssignmentType,
+
+    @field:NotBlank(message = "설명을 입력해주세요.")
+    val description: String
+)

@@ -1,3 +1,35 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b3d671f8b2a5ecdc91dcc2407c10be17cb40a4afba6cdcdf02a1b3b058a9adf9
-size 980
+import React from "react";
+import Left from "@/assets/Common/Chevron-left.svg?react";
+import Right from "@/assets/Common/Chevron-right.svg?react";
+import styles from "@/styles/Attendance/Member.module.css";
+export default function AttendanceToolbar(props) {
+  const { date } = props;
+
+  const navigate = (action) => {
+    props.onNavigate(action);
+  };
+  return (
+    <div className={styles.toolbar}>
+      <span className={styles.toolbarGroup}>
+        <div className={styles.dateGroup}>
+          <button
+            type="button"
+            onClick={() => navigate("PREV")}
+            className={styles.leftButton}
+          >
+            <Left />
+          </button>
+          <span>{`${date.getFullYear()}. ${date.getMonth() + 1}`}</span>
+
+          <button
+            type="button"
+            onClick={() => navigate("NEXT")}
+            className={styles.rightButton}
+          >
+            <Right />
+          </button>
+        </div>
+      </span>
+    </div>
+  );
+}

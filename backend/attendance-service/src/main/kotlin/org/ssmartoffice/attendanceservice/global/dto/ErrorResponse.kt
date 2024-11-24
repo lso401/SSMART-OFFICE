@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:35cf045191d54ec053bcdc2968e1841956f93f8a497abb5fed5bd6f5f01a502b
-size 747
+package org.ssmartoffice.attendanceservice.global.dto
+
+import com.fasterxml.jackson.annotation.JsonInclude
+import org.springframework.validation.FieldError
+
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
+class ErrorResponse(
+    val status: Int = 0,
+    val error: String,
+    val message: String?,
+    val errors: List<ValidationError> = emptyList()
+) {
+    class ValidationError(
+        val field: String,
+        val message: String?
+    ) {
+        companion object {
+            @JvmStatic
+            fun of(fieldError: FieldError): ValidationError {
+                return ValidationError(
+                    field = fieldError.field,
+                    message = fieldError.defaultMessage
+                )
+            }
+        }
+    }
+}

@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3fe420546779875069517ba12e29be769f03a306904f25958d8c79f4c73b569a
-size 1110
+package org.ssmartoffice.userservice.controller.port
+
+import org.ssmartoffice.userservice.domain.User
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable
+import org.springframework.security.core.Authentication
+import org.ssmartoffice.userservice.controller.request.*
+import org.ssmartoffice.userservice.controller.response.UserInfoResponse
+
+interface UserService {
+    fun addUser(userRegisterRequest: UserRegisterRequest): User
+    fun findUserByUserIdWithAuth(userId: Long, authentication: Authentication): User
+    fun findUserByUserId(userId: Long): User
+    fun findByUserEmail(userEmail: String): User
+    fun getAllUsersByPage(pageable: Pageable): Page<User>
+    fun updateUser(userId: Long, userUpdateRequest: UserUpdateRequest): User
+    fun updatePassword(userId: Long, passwordUpdateRequest: PasswordUpdateRequest)
+    fun authenticateUser(userLoginRequest: UserLoginRequest): User
+    fun findAllByIds(userIds: List<Long>): List<User>
+    fun existsById(userId: Long): Boolean
+    fun findUser(keyword: String, pageable: Pageable): Page<UserInfoResponse>?
+}

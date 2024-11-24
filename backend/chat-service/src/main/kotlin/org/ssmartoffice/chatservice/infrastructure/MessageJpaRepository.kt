@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5b3294d59bbfc031e131652dcda73f9353b042e6582a8b652aebc6110ad10377
-size 657
+package org.ssmartoffice.chatservice.infrastructure
+
+import org.springframework.data.jpa.repository.JpaRepository
+import org.springframework.data.jpa.repository.Query
+import org.springframework.stereotype.Repository
+
+@Repository
+interface MessageJpaRepository: JpaRepository<MessageEntity, Long> {
+    @Query("select m from MessageEntity m where m.chatroom.chatroom.id = :chatroomId order by m.createdAt desc limit 1")
+    fun findTopByChatroomIdOrderByCreatedAtDesc(chatroomId: Long): MessageEntity?
+
+    @Query("select m from MessageEntity m where m.chatroom.chatroom.id = :chatroomId")
+    fun findAllByChatroomId(chatroomId: Long): List<MessageEntity>
+}

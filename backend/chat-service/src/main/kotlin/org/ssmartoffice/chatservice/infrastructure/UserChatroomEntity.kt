@@ -1,3 +1,35 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7b0b118c341ef2225c9f011f783ea02f9f11ab0e56f17178d6bfa5bb9d7e345b
-size 903
+package org.ssmartoffice.chatservice.infrastructure
+
+import jakarta.persistence.*
+import org.ssmartoffice.chatservice.domain.UserChatRoom
+
+@Entity
+@Table(name = "userchatrooms")
+class UserChatroomEntity(
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    val id: Long? = null,
+    val userId: Long?,
+
+    @ManyToOne
+    @JoinColumn(name = "USER_CHATROOM_ID")
+    val chatroom: ChatroomEntity,
+) {
+    fun toModel(): UserChatRoom? {
+        return UserChatRoom(
+            id = id,
+            userId = userId,
+            chatroomId = chatroom.id
+        )
+    }
+
+    companion object {
+        fun fromModel(userChatroom: UserChatRoom): UserChatroomEntity {
+            return UserChatroomEntity(
+                id = userChatroom.id,
+                userId = userChatroom.userId,
+                chatroom = ChatroomEntity(id = userChatroom.chatroomId)
+            )
+        }
+    }
+}

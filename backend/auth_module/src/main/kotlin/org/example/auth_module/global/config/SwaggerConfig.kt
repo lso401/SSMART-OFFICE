@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d73ba8d8b69d485dee3b3fc203e676e186d1b74d1cdaaa692681f1afe7894427
-size 597
+package org.example.auth_module.global.config
+
+import io.swagger.v3.oas.models.Components
+import io.swagger.v3.oas.models.OpenAPI
+import io.swagger.v3.oas.models.info.Info
+import org.springframework.context.annotation.Bean
+import org.springframework.context.annotation.Configuration
+
+@Configuration
+class SwaggerConfig {
+    @Bean
+    fun openAPI(): OpenAPI = OpenAPI()
+        .components(Components())
+        .info(apiInfo())
+
+    private fun apiInfo() = Info()
+        .title("SSMART OFFICE API 문서")
+        .description("SSMART OFFICE API 명세서입니다.")
+        .version("1.0.0")
+}

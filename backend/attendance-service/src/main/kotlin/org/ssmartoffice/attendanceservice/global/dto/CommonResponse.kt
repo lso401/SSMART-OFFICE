@@ -1,3 +1,38 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e2f082632e52cff73bf98b68c8c008279d53989e4adbd971561f61da452e07ee
-size 1157
+package org.ssmartoffice.attendanceservice.global.dto
+
+import com.fasterxml.jackson.annotation.JsonInclude
+import org.springframework.http.HttpStatus
+import org.springframework.http.ResponseEntity
+import org.ssmartoffice.attendanceservice.global.const.successcode.SuccessCode
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+data class CommonResponse<T>(
+    val status: Int,
+    val msg: String,
+    val data: T? = null
+) {
+    companion object {
+
+        fun <T> ok(msg: String, data: T? = null): ResponseEntity<CommonResponse<T>> {
+            return ResponseEntity(
+                CommonResponse(
+                    status = SuccessCode.OK.getValue(),
+                    msg = msg,
+                    data = data
+                ),
+                HttpStatus.OK
+            )
+        }
+
+        fun <T> created(msg: String, data: T? = null): ResponseEntity<CommonResponse<T>> {
+            return ResponseEntity(
+                CommonResponse(
+                    status = SuccessCode.CREATED.getValue(),
+                    msg = msg,
+                    data = data
+                ),
+                HttpStatus.CREATED
+            )
+        }
+    }
+}

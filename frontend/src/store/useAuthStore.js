@@ -1,3 +1,35 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ecdd4374af66574e1ab6dbc070fc2ecb6e6523ab5cb02bda61a6efed858aa3ae
-size 755
+import { create } from "zustand";
+import { persist } from "zustand/middleware";
+import Cookies from "js-cookie";
+
+const useAuthStore = create(
+  persist(
+    (set) => ({
+      isAuthenticated: false,
+      accessToken: null,
+      setAuth: (accessToken) => {
+        set({
+          isAuthenticated: true,
+          accessToken,
+        });
+      },
+      clearAuth: () => {
+        set({
+          isAuthenticated: false,
+          accessToken: null,
+        });
+        Cookies.remove("refresh");
+      },
+    }),
+    {
+      name: "auth",
+      partialize: (state) => ({
+        isAuthenticated: state.isAuthenticated,
+        accessToken: state.accessToken,
+      }),
+      getStorage: () => sessionStorage,
+    }
+  )
+);
+
+export default useAuthStore;

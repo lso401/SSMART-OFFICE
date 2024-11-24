@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:04fd6f391203505469ef6241c2876801734537514d2ce65719266e4df0c74ceb
-size 543
+package org.example.auth_module.global.auth.service
+
+import lombok.RequiredArgsConstructor
+import lombok.extern.slf4j.Slf4j
+import org.example.auth_module.global.auth.jwt.JwtTokenProvider
+import org.springframework.stereotype.Service
+
+@Slf4j
+@Service
+@RequiredArgsConstructor
+class AuthService(
+    val tokenProvider: JwtTokenProvider
+) {
+    fun refreshToken(oldAccessToken: String): String {
+        val authentication = tokenProvider.getAuthentication(oldAccessToken)
+
+        return tokenProvider.createAccessToken(authentication)
+    }
+}

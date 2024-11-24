@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a89069a42f1191118b69bb9261a658fece0fc0170e78b29de5ff35f747d20da1
-size 642
+package org.ssmartoffice.pointservice.service.port
+
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.Pageable
+import org.springframework.stereotype.Repository
+import org.ssmartoffice.pointservice.domain.PointHistory
+import java.time.LocalDate
+
+@Repository
+interface PointHistoryRepository {
+    fun findByUserIdAndTransactionTimeBetween(
+        userId: Long,
+        startDate: LocalDate,
+        endDate: LocalDate,
+        pageable: Pageable
+    ): Page<PointHistory>
+
+    fun findTop1ByUserIdOrderByCreatedDateTimeDesc(userId: Long): PointHistory?
+    fun save(pointHistory: PointHistory): PointHistory
+}

@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f810f08a81b3cdab6495c0eabd9ac903634c3789603a2a2ad1e318d19f377a25
-size 849
+package org.ssmartoffice.chatservice.controller.response
+
+import org.ssmartoffice.chatservice.domain.MessageType
+import org.ssmartoffice.chatservice.domain.UserChatRoom
+import java.time.LocalDateTime
+
+class MessageResponse(
+    val id :Long? = null,
+    val userId :Long,
+    val chatroom : UserChatRoom,
+    val type : MessageType,
+    val content :String,
+    val createdAt : LocalDateTime = LocalDateTime.now()
+) {
+
+    companion object {
+        fun fromModel(message: org.ssmartoffice.chatservice.domain.Message): MessageResponse {
+            return MessageResponse(
+                id = message.id,
+                userId = message.userId,
+                chatroom = message.chatroom,
+                type = message.type,
+                content = message.content,
+                createdAt = message.createdAt
+            )
+        }
+    }
+}

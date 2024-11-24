@@ -1,3 +1,93 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5b02fbb47623a4c2a47e44e5c56c00c544ec99ac5087f712a069f73db121d194
-size 1622
+.box {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.title {
+  margin-top: 50px;
+  margin-bottom: 25px;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.dateBox {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  margin-left: 13px;
+  justify-content: end;
+  align-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  padding: 5px;
+}
+.datePicker {
+  cursor: pointer;
+  height: 30px;
+  width: 150px;
+}
+.firstDate {
+  margin-left: 20px;
+}
+
+.table {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+
+.tableHeader {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr 2fr 1.5fr 1.5fr;
+  height: 50px;
+  align-content: center;
+  text-align: center;
+  background-color: var(--blue);
+  background-color: #91adf5;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px 10px 0 0;
+  color: #fff;
+}
+
+.content {
+  display: grid;
+  text-align: center;
+  grid-template-columns: 2fr 2fr 1fr 2fr 1.5fr 1.5fr;
+  height: 50px;
+  align-content: center;
+  background-color: #fff;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.content:last-child {
+  border-radius: 0 0 10px 10px;
+}
+
+.welfareSearch {
+  font-weight: bold;
+  background: inherit;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  overflow: visible;
+  cursor: pointer;
+  width: 50px;
+  height: 31px;
+  background-color: var(--blue);
+  border-radius: 5px;
+  color: #fff;
+}
+
+.plus {
+  color: var(--blue);
+}
+.minus {
+  color: var(--red);
+}
+
+.none {
+  display: grid;
+  justify-content: center;
+  margin: 40px 0;
+}

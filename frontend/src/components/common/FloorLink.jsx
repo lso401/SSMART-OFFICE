@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f00e0bed6d353ea3bc262f744d76a51cb4f480ab2d2d27ae9d8c679c575fa306
-size 621
+import { NavLink } from "react-router-dom";
+import styles from "@/styles/Seat/FloorLink.module.css";
+import PropTypes from "prop-types";
+
+const FloorLink = ({ to, label, className }) => {
+  return (
+    <NavLink
+      to={to}
+      className={({ isActive }) =>
+        isActive ? `${className} ${styles.active}` : className
+      }
+    >
+      {label}
+    </NavLink>
+  );
+};
+
+FloorLink.propTypes = {
+  to: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired,
+  isIndex: PropTypes.bool,
+};
+
+FloorLink.defaultProps = {
+  isIndex: false,
+};
+
+export default FloorLink;

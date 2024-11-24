@@ -1,3 +1,79 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:52fc7fe3bfa4e453e77062f6de027646e1589ef89d21d95815f2ed0b77f3f9cc
-size 1577
+/* 달력 */
+.rbc-month-view {
+  background-color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border: none;
+}
+/* 일자 박스 */
+.rbc-month-header {
+  background-color: #dae4fc80;
+  height: 40px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+/* 요일 */
+.rbc-header {
+  font-size: 13px;
+  font-weight: 400;
+  color: #00000080;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-left: 0px solid white !important;
+  border-bottom: 1px solid #a0a0a040 !important;
+}
+/* 지난 달 날짜 */
+.rbc-off-range-bg {
+  background-color: var(--text-description) 20;
+  color: var(--text-description);
+}
+.rbc-month-row {
+  color: #00000080;
+}
+/* 일자 클릭 */
+.rbc-button-link {
+  pointer-events: none;
+  /* cursor: default; */
+}
+/* 일자 박스 */
+.rbc-row-bg {
+  cursor: pointer;
+}
+.rbc-date-cell {
+  margin-top: 10px;
+}
+/* 연차 등 이벤트 */
+.rbc-event {
+  height: 25px;
+  background-color: #ffffff00;
+  color: var(--text-blue);
+  pointer-events: none;
+  font-size: 10px;
+}
+/* 오늘 날짜 */
+.rbc-today {
+  background-color: #dae4fc50;
+  border-top: 3px solid #104def;
+}
+.rbc-current {
+  color: var(--text-blue);
+}
+.rbc-show-more {
+  color: var(--text-description);
+  font-size: 12px;
+  font-weight: 500;
+  margin-left: 15px;
+  cursor: pointer;
+}
+.rbc-off-range-bg {
+  background-color: #a0a0a030;
+  color: var(--text-description);
+}
+.rbc-day-bg {
+  border-left: 0px solid white !important;
+  border-right: 0px solid white !important;
+  display: flex;
+  justify-content: center;
+}

@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:03fd919eaf65f1a9a61fe9177412c30645c2dfc7d0b2a4336106fbfbb35856d5
-size 711
+package org.example.auth_module.user.infrastructure
+
+import org.example.auth_module.user.domain.User
+import org.example.auth_module.user.service.port.UserRepository
+import org.springframework.stereotype.Repository
+
+@Repository
+class UserRepositoryImpl(
+    private val userJpaRepository: UserJpaRepository,
+) : UserRepository {
+
+    override fun findByEmail(email: String?): User? {
+        return userJpaRepository.findByEmail(email)?.toModel()
+    }
+
+    override fun findByLoginId(loginId: String): User? {
+
+        return userJpaRepository.findByLoginId(loginId)?.toModel()
+    }
+
+    override fun save(user: User): User {
+        return userJpaRepository.save(UserEntity.fromModel(user)).toModel()
+    }
+}
