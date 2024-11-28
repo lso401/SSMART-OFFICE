@@ -1,0 +1,8 @@
+.active {
+  background-color: var(--text-description);
+  color: #fff;
+}
+.active:hover {
+  background-color: var(--text-description);
+  color: #fff;
+}
